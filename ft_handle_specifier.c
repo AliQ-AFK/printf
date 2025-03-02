@@ -26,7 +26,7 @@ int	ft_handle_specifier(char specifier, va_list args)
 		return (ft_put_hex(va_arg(args, unsigned int), specifier));
 	else if (specifier == 'p')
 		return (ft_put_pointer(va_arg(args, unsigned long)));
-	ft_putchar('%');
-	ft_putchar(specifier);
-	return (2);
+	else if (specifier == '%')
+		return (ft_putchar('%'));
+	return (0);
 }
